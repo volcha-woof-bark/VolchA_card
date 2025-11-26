@@ -98,7 +98,6 @@ body {
   animation: pulse 7s ease-in-out infinite;
 }
 
-/* 🌠 Падающая звезда */
 .shooting-star {
   position: absolute;
   top: 20%;
@@ -354,7 +353,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* 🎮 Игры без логотипа */
 .game.no-logo {
   padding-left: 0;
 }
@@ -400,4 +398,5 @@ body {
   .game-logo {
     margin: 0 auto;
   }
+
 }
