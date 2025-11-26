@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Волчик</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+  
+</head>
+<body>
+  <div class="moon"></div>
+  <div class="stars" id="stars"></div>
+
+    <svg class="forest-silhouette" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path fill="#16161a" opacity="0.7" d="
+        M0,120 
+        L0,40 
+        C100,30 200,50 300,25 
+        C450,10 600,55 750,20 
+        C900,5 1050,60 1200,25 
+        L1200,120 
+        Z
+      "/>
+    </svg>
+
+  <div class="card">
+    <div class="avatar-placeholder">
+      <div class="avatar-border">
+        <div class="avatar-inner" style="background-image: url('avatar.png');"></div>
+      </div>
+    </div>
+
+    <h1 class="name">Волчик</h1>
+    <p class="meta">20 годиков • она/он</p>
+
+    <div class="section">
+      <h2>Обо мне</h2>
+      <p>Очень общительный человек. Могу иногда заговариваться, так что просто тормозите меня. Учусь на веб-разработчика, рисую, когда есть настроение.</p>
+    </div>
+
+    <div class="section">
+      <h2>Любимая игра</h2>
+      
+      <div class="game no-logo">
+        <div class="game-info">
+          <h3>League of Legends</h3>
+          <p>Играю с 2019 года. Безумно люблю вселенную Рунтерры. Можем как просто обсудить что-либо, так и поиграть совместно! </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Интересы</h2>
+      <div class="interests">
+        <div class="interest">
+          <i class="fas fa-heart"></i>
+          <span>Большую часть времени провожу в играх</span>
+        </div>
+        <div class="interest">
+          <i class="fas fa-heart"></i>
+          <span>Обожаю слушать самую разную музыку</span>
+        </div>
+        <div class="interest">
+          <i class="fas fa-heart"></i>
+          <span>Изучаю мифологию, преимущественно - Скандинавскую</span>
+        </div>
+        <div class="interest">
+          <i class="fas fa-heart-broken"></i>
+          <span>Порой могу пропадать, но это не значит что я игнорирую вас. Просто я выпадаю из-за состояния. Не теряйте :c</span>
+        </div>
+        <div class="interest">
+          <i class="fas fa-heart-broken"></i>
+          <span>В последнее время, практически полностью обитаю только в Телеграмме и в Дискорде</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Фандомы</h2>
+      <div class="tags">
+        <span class="tag">League of Legends</span>
+        <span class="tag">Valorant</span>
+        <span class="tag">The Witcher</span>
+        <span class="tag">King's Bounty</span>
+        <span class="tag">Baldur's Gate 3</span>
+        <span class="tag">Katana ZERO</span>
+        <span class="tag">CyberPunk 2077</span>
+        <span class="tag">Furry</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Я правда буду рада любому человеку в своих сообщениях. Пишите, я не кусаюсь, я безумно люблю узнавать новых людей! ♡ ︎</p>
+      <p style="font-size: 0.75rem; color: #9a9aa5; margin-top: 0.5rem;">P.s: только укажите откуда вы, чтобы меня же не напугать :3</p>
+        <a href="https://t.me/VolchA_WooF" class="contact-btn">Связаться со мной</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const starsContainer = document.getElementById('stars');
+
+      const starCount = 60;
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 80 + 5}%`;
+        const size = Math.random() < 0.2 ? 
+          (Math.random() * 2 + 2) : 
+          (Math.random() * 1.2 + 0.8);
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        if (size > 2) {
+          star.classList.add('large');
+          star.style.animationDelay = `${Math.random() * 10}s`;
+          star.style.animationDuration = `${8 + Math.random() * 6}s`;
+        } else {
+          star.style.animationDelay = `${Math.random() * 5}s`;
+          star.style.animationDuration = `${4 + Math.random() * 3}s`;
+        }
+        starsContainer.appendChild(star);
+      }
+
+      function createShootingStar() {
+        const star = document.createElement('div');
+        star.className = 'shooting-star';
+        const startX = Math.random() * 30 + 5;
+        const startY = Math.random() * 25 + 5;
+        star.style.left = `${startX}%`;
+        star.style.top = `${startY}%`;
+        const duration = 0.9 + Math.random() * 0.4;
+        star.style.transition = `opacity ${duration * 0.25}s, transform ${duration}s cubic-bezier(0.2, 0, 0.8, 1)`;
+        document.body.appendChild(star);
+        setTimeout(() => {
+          star.style.opacity = '1';
+          const endX = 50 + Math.random() * 50;
+          const endY = 40 + Math.random() * 50;
+          star.style.transform = `translate(${endX}vw, ${endY}vh)`;
+        }, 50);
+        setTimeout(() => star.style.opacity = '0', duration * 750);
+        setTimeout(() => star.remove(), duration * 1000 + 50);
+      }
+
+      setTimeout(createShootingStar, 2000);
+      setInterval(createShootingStar, 4000);
+    });
+  </script>
+</body>
+</html>
