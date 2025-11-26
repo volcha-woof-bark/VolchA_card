@@ -41,17 +41,21 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   background: #1a1a1f;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   padding: 1.25rem;
   color: #e0e0e8;
-overflow-x: hidden;
-overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 
